@@ -1,0 +1,79 @@
+/* Header styling */
+.appHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6a0dad; /* Purple background */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo styling */
+.appLogo {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.appLogo:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation styling */
+.appNav {
+    display: flex;
+    gap: 20px;
+}
+
+.navItem {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    position: relative;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+/* Adding a purple underline effect */
+.navItem::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.navItem:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navItem:hover {
+    color: #d4bfff;
+    transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .appHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .appNav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navItem {
+        margin-bottom: 10px;
+    }
+}
