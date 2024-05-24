@@ -1,79 +1,43 @@
-/* Header styling */
-.appHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #6a0dad; /* Purple background */
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo styling */
-.appLogo {
-    height: 50px;
-    width: auto;
-    transition: transform 0.3s ease;
+.logo img {
+  height: 40px;
 }
 
-.appLogo:hover {
-    transform: scale(1.1);
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
-/* Navigation styling */
-.appNav {
-    display: flex;
-    gap: 20px;
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
 }
 
-.navItem {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    position: relative;
-    padding: 10px 15px;
-    transition: color 0.3s ease;
-}
-/* Adding a purple underline effect */
-.navItem::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    height: 2px;
-    width: 100%;
-    background-color: white;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
+.nav a:hover {
+  color: #f90;
 }
 
-.navItem:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+.search-bar input {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  width: 250px;
 }
 
-.navItem:hover {
-    color: #d4bfff;
-    transform: translateY(-2px);
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .appHeader {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .appNav {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .navItem {
-        margin-bottom: 10px;
-    }
+.profile img {
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
 }

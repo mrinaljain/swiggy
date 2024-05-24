@@ -1,2 +1,4 @@
 export const AppLogo =
-  "https://link.fobshanghai.com/bbsimage/fair/fai_india_member/2429.png";
+  "https://w7.pngwing.com/pngs/587/646/png-transparent-swiggy-hd-logo-thumbnail.png";
+
+export const SvgAppLogo = "../assets/svg/swiggy.svg";
