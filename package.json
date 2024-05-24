@@ -2,10 +2,10 @@
   "name": "swiggy",
   "version": "1.0.0",
   "description": "jain food ordering app",
-  "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
