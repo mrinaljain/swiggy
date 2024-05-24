@@ -1,5 +1,5 @@
 {
-  "name": "jainbites",
+  "name": "swiggy",
   "version": "1.0.0",
   "description": "jain food ordering app",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrinaljain/jainbites.git"
+    "url": "git+https://github.com/mrinaljain/swiggy.git"
   },
   "keywords": [
     "jain",
@@ -19,9 +19,9 @@
   "author": "Mrinal Jain",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mrinaljain/jainbites/issues"
+    "url": "https://github.com/mrinaljain/swiggy/issues"
   },
-  "homepage": "https://github.com/mrinaljain/jainbites#readme",
+  "homepage": "https://github.com/mrinaljain/swiggy#readme",
   "devDependencies": {
     "parcel": "^2.12.0",
     "process": "^0.11.10"
