@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Header } from "./src/components/Header/Header";
-import Body from "./src/components/Body/Body";
+
+import { BrowserRouter, Route, Routes, RouterProvider } from "react-router-dom";
+import { routes } from "./src/utils/routes";
 
 const rootElement = document.getElementById("root");
 
@@ -9,10 +10,16 @@ const root = ReactDOM.createRoot(rootElement);
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <Body />
-    </>
+    //! Using BrowserRouter
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/" element={<Home />} />
+    //     <Route path="/about" element={<About />} />
+    //     <Route path="/contact" element={<Contact />} />
+    //   </Routes>
+    // </BrowserRouter>
+    //! Using CreateBrowser Router
+    <RouterProvider router={routes}></RouterProvider>
   );
 };
 

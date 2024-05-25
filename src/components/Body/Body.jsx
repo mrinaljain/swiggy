@@ -54,7 +54,7 @@ const Body = function () {
 
    // TODO: Add shimmer effect here
    return (
-      <div>
+      <>
          <div className="button-container">
             <div className="search-bar">
                <input type="search"
@@ -74,8 +74,8 @@ const Body = function () {
          <div className="foodContainer">
             {restaurantCards}
          </div>
-      </div>
-   );
+      </>
+   )
 }
 
 export default Body;
