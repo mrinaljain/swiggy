@@ -10,6 +10,10 @@ const Body = function () {
    const [restaurantList, setRestaurentList] = useState([]);
    const [topRestaurantList, setTopRestaurentList] = useState([]);
    const [searchKeyword, setsearchKeyword] = useState("");
+   //! useEffect
+   // if no dependency Array then useEffect is called on every render
+   // if Empty dependency Array then useEffect is called only once
+   // if dependency Array value exists then useEffect is called everytime value changes
    useEffect(getdata, []);
    function getdata() {
       (async () => {
@@ -75,3 +79,5 @@ const Body = function () {
 }
 
 export default Body;
+
+// TODO : build lazy scroll on this page
