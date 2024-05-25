@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css"
 import { AppLogo } from "../../utils/constants";
 import YourSvg from '../../assets/svg/swiggy.svg';
 
 export const Header = function () {
+   const [authStatus, setAuthStatus] = useState(true);
+   function handleAuth() {
+      setAuthStatus((oldStatus) => !oldStatus);
+   }
+   console.log("Header Rendered");
    return (
       <header className="header">
          <div className="logo">
@@ -14,12 +19,10 @@ export const Header = function () {
                <li><a href="#home">Home</a></li>
                <li><a href="#offers">Offers</a></li>
                <li><a href="#help">Help</a></li>
-               <li><a href="#sign-in">Sign In</a></li>
+               <li><button onClick={handleAuth}> {authStatus ? "Sign Out" : "Sign In"}</button></li>
             </ul>
          </nav>
-         <div className="search-bar">
-            <input type="text" placeholder="Search for restaurants or dishes" />
-         </div>
+
          <div className="profile">
             <img src="profile-icon-url-here.png" alt="Profile" />
          </div>

@@ -55,3 +55,11 @@ button.clear.filter:hover {
 button.clear:active {
   background-color: #aaa;
 }
+
+
+.search-bar input {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  /* width: 350px; */
+}
