@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./src/components/Header/Header";
+import { Header } from "./src/components/Header/Header";
 import Body from "./src/components/Body/Body";
 
 const rootElement = document.getElementById("root");

@@ -3,7 +3,7 @@ import "./Header.css"
 import { AppLogo } from "../../utils/constants";
 import YourSvg from '../../assets/svg/swiggy.svg';
 
-const Header = function () {
+export const Header = function () {
    return (
       <header className="header">
          <div className="logo">
@@ -27,4 +27,3 @@ const Header = function () {
    );
 }
 
-export default Header;

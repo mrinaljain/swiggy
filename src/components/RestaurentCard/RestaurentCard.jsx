@@ -2,12 +2,8 @@ import React from "react";
 import "./RestaurentCard.css";
 const RestaurentCard = (props) => {
    // ! nested Destructuring
-   const { name, areaName, cuisines, cloudinaryImageId, avgRating, sla: { slaString }, aggregatedDiscountInfoV3: { header, subHeader } } = props.restaurantData?.info;
-   function handelClick(e) {
-      e.preventDefault();
-      window.location = props.restaurantData.cta.link;
+   const { name, areaName, cuisines, cloudinaryImageId, avgRating, sla: { slaString } = {}, aggregatedDiscountInfoV3: { header = '', subHeader = '' } = {} } = props.restaurantData?.info;
 
-   }
    return (
       <div className="card">
          <div className="card-image">
