@@ -1,6 +1,8 @@
-.card-link{
-  text-decoration: none;;
+.card-link {
+  text-decoration: none;
+  ;
 }
+
 .card {
   width: 230px;
   border-radius: 10px;
@@ -60,6 +62,7 @@
   margin: 5px 0;
   color: #555;
 }
+
 .card-details p.cusine {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -67,4 +70,19 @@
   font-weight: 200;
   display: -webkit-box;
   overflow: hidden;
+}
+
+.modifiedCard {
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  background-color: rgb(65, 195, 111);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
 }

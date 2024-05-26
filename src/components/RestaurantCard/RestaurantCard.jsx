@@ -1,7 +1,7 @@
 import React from "react";
-import "./RestaurentCard.css";
+import "./RestaurantCard.css";
 import { Link } from "react-router-dom";
-const RestaurentCard = (props) => {
+const RestaurantCard = (props) => {
    // ! nested Destructuring
    const { id, name, areaName, cuisines, cloudinaryImageId, avgRating, sla: { slaString } = {}, aggregatedDiscountInfoV3: { header = '', subHeader = '' } = {} } = props.restaurantData?.info;
 
@@ -23,4 +23,19 @@ const RestaurentCard = (props) => {
    )
 }
 
-export default RestaurentCard;
+export default RestaurantCard;
+
+
+export const withPromotedLable = function (RestaurantCard) {
+   return (props) => {
+      return (
+         <div className="modifiedCard">
+            <label className="label">VEG</label>
+            <RestaurantCard {...props} />
+         </div>
+      )
+   }
+}
+
+// Higher order Components
+// Higher order Components take input a Component and return a modified version of it without disturbing its actual functionality (because its a pure function)

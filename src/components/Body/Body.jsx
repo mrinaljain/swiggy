@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Body.css"
-import RestaurentCard from "../RestaurentCard/RestaurentCard";
+import RestaurantCard, { withPromotedLable } from "../RestaurantCard/RestaurantCard";
 import Carousel from "../Carousal/Carousal";
 import useRestaurantList from "../../utils/useRestaurantList";
 import Shimmer from "../Shimmer/Shimmer";
@@ -9,10 +9,12 @@ const Body = function () {
    console.log("Body Rendered");
    let restaurantData = useRestaurantList();
    const [searchKeyword, setsearchKeyword] = useState("");
-   function filter(rating) {
-      //TODO Fix filter logic here as UI is not updating
-      // restaurantData = restaurantData[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants.filter((oldRestaurent) => oldRestaurent.info.avgRating >= rating);
-      // console.log(restaurantData);
+   const [filter, setFilter] = useState(false);
+   function handleFilter() {
+      setFilter(true);
+   }
+   function clearFilter() {
+      setFilter(false);
    }
    function handleSearch(e) {
       let searchText = e.target.value;
@@ -24,18 +26,13 @@ const Body = function () {
       let restaurantList = restaurantData[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
       let topRestaurantList = restaurantData[0].card.card.imageGridCards.info;
 
-   let restaurantCards = searchKeyword.length > 0
-      ? restaurantList
-         .filter((restaurant) =>
-            restaurant.info.name.toLowerCase().includes(searchKeyword.toLowerCase())
-         )
-         .map((restaurant) => (
-            <RestaurentCard key={restaurant.info.id} restaurantData={restaurant} />
-         ))
-      : restaurantList
-         .map((restaurant) => (
-            <RestaurentCard key={restaurant.info.id} restaurantData={restaurant} />
-         ));
+      let restaurantCardsList = filter ? restaurantList.filter((oldRestaurent) => oldRestaurent.info.avgRating >= 4.5) : searchKeyword.length > 0
+         ? restaurantList
+            .filter((restaurant) =>
+               restaurant.info.name.toLowerCase().includes(searchKeyword.toLowerCase())
+            )
+         : restaurantList;
+      const UpdatedCard = withPromotedLable(RestaurantCard);
       return (
          <div className="test">
             <div className="button-container">
@@ -46,13 +43,20 @@ const Body = function () {
                      value={searchKeyword}
                   />
                </div>
-               <button className="filter" onClick={() => filter(4.5)}> Top Rated </button>
-               <button className="filter clear" onClick={() => filter(0)}> CLEAR </button>
+               <button className="filter" onClick={handleFilter}> Top Rated </button>
+               <button className="filter clear" onClick={clearFilter}> CLEAR </button>
             </div>
             {topRestaurantList.length && <Carousel restaurantList={topRestaurantList} />}
             <h3>Restaurants with online food delivery in Indore</h3>
             <div className="foodContainer">
-               {restaurantCards}
+               {restaurantCardsList.map((restaurant) => {
+                  return restaurant?.info?.veg ?
+                     <UpdatedCard key={restaurant.info.id} restaurantData={restaurant} />
+                     :
+                     <RestaurantCard key={restaurant.info.id} restaurantData={restaurant} />
+
+
+               })}
             </div>
          </div>
       );
