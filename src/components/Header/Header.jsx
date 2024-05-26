@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Header.css"
 import { AppLogo } from "../../utils/constants";
 import { Link } from "react-router-dom";
 import useConnectivity from "../../utils/useConnectivity";
+import UserContext from "../../utils/userContext";
 
 const Header = function () {
    const [authStatus, setAuthStatus] = useState(true);
+   const userData = useContext(UserContext);
+   console.log(userData);
    function handleAuth() {
       setAuthStatus((oldStatus) => !oldStatus);
    }
@@ -25,7 +28,8 @@ const Header = function () {
             </ul>
          </nav>
          <div className="profile">
-            <img src="profile-icon-url-here.png" alt="Profile" />
+            <img src={userData.userImage} />
+            {userData.userName}
             <button
                onClick={handleAuth}>
                {authStatus ? "Sign Out" : "Sign In"}

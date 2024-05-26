@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import { BrowserRouter, Route, Routes, RouterProvider } from "react-router-dom";
 import { routes } from "./src/utils/routes";
+import UserContext from "./src/utils/userContext";
 
 const rootElement = document.getElementById("root");
 
@@ -19,7 +20,14 @@ const App = () => {
     //   </Routes>
     // </BrowserRouter>
     //! Using CreateBrowser Router
-    <RouterProvider router={routes}></RouterProvider>
+    <UserContext.Provider
+      value={{
+        userName: "Mrinal ",
+        userImage: "https://avatars.githubusercontent.com/mrinaljain",
+      }}
+    >
+      <RouterProvider router={routes}></RouterProvider>
+    </UserContext.Provider>
   );
 };
 

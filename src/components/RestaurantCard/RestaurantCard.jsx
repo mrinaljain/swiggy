@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./RestaurantCard.css";
 import { Link } from "react-router-dom";
+import UserContext from "../../utils/userContext";
+import { useContext } from "react";
 const RestaurantCard = (props) => {
    // ! nested Destructuring
    const { id, name, areaName, cuisines, cloudinaryImageId, avgRating, sla: { slaString } = {}, aggregatedDiscountInfoV3: { header = '', subHeader = '' } = {} } = props.restaurantData?.info;
-
+   const userData = useContext(UserContext);
    return (
       <Link className="card-link" to={`/restaurant/${id}`}>
          <div className="card">
@@ -17,6 +19,7 @@ const RestaurantCard = (props) => {
                <p>⭐ {avgRating} • {slaString}</p>
                <p className="cusine">{cuisines.join(",")}</p>
                <p>{areaName}</p>
+               <p>{userData.userName}</p>
             </div>
          </div>
       </Link>
