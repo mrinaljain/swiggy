@@ -1,8 +1,14 @@
 import React from 'react';
 import './MenuItemCard.css';
-
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../utils/cartSlice';
 const MenuItemCard = (props) => {
    const { category, description, imageId, isBestseller, name, price, defaultPrice, ratings: { aggregatedRating: { rating, ratingCount, ratingCountV2 } } } = props.itemInfo;
+
+   const dispatch = useDispatch();
+   const handleAddItem = (item) => {
+      dispatch(addItem(item));
+   }
    return (
       <div className="menu-item-card">
          <div className="menu-item-content">
@@ -20,7 +26,10 @@ const MenuItemCard = (props) => {
          </div>
          <div className="menu-item-image-container">
             <img src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${imageId}`} alt="Chicken Biryani and Butter Chicken Meal" className="menu-item-image" />
-            <button className="add-button">ADD</button>
+            <button
+               className="add-button"
+               onClick={() => handleAddItem(props.itemInfo)}
+            >ADD</button>
             <span className="customisable">Customisable</span>
          </div>
       </div>

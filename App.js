@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 import { BrowserRouter, Route, Routes, RouterProvider } from "react-router-dom";
 import { routes } from "./src/utils/routes";
 import UserContext from "./src/utils/userContext";
+import { Provider } from "react-redux";
+import appStore from "./src/utils/appStore";
 
 const rootElement = document.getElementById("root");
 
@@ -20,14 +21,16 @@ const App = () => {
     //   </Routes>
     // </BrowserRouter>
     //! Using CreateBrowser Router
-    <UserContext.Provider
-      value={{
-        userName: "Mrinal ",
-        userImage: "https://avatars.githubusercontent.com/mrinaljain",
-      }}
-    >
-      <RouterProvider router={routes}></RouterProvider>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider
+        value={{
+          userName: "Mrinal ",
+          userImage: "https://avatars.githubusercontent.com/mrinaljain",
+        }}
+      >
+        <RouterProvider router={routes}></RouterProvider>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 

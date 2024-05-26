@@ -6,6 +6,7 @@ import Error from "../pages/Error/Error";
 import HomeLayout from "../components/HomeLayout";
 import Restaurant from "../pages/Restaurant/Restaurant";
 import Shimmer from "../components/Shimmer/Shimmer";
+import Cart from "../pages/Cart/Cart";
 
 //! Lazy load one component for example
 
@@ -27,6 +28,7 @@ export let routes = createBrowserRouter([
       },
       { path: "/contact", element: <Contact /> },
       { path: "/restaurant/:id", element: <Restaurant /> },
+      { path: "/cart", element: <Cart /> },
     ],
   },
 ]);

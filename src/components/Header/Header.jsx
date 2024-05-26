@@ -4,11 +4,12 @@ import { AppLogo } from "../../utils/constants";
 import { Link } from "react-router-dom";
 import useConnectivity from "../../utils/useConnectivity";
 import UserContext from "../../utils/userContext";
+import { useSelector } from "react-redux";
 
 const Header = function () {
    const [authStatus, setAuthStatus] = useState(true);
    const userData = useContext(UserContext);
-   console.log(userData);
+   const cartItems = useSelector((store) => store.cart.items);
    function handleAuth() {
       setAuthStatus((oldStatus) => !oldStatus);
    }
@@ -24,7 +25,7 @@ const Header = function () {
                <li><Link to="">Home</Link></li>
                <li><Link to="/contact">Contact</Link></li>
                <li><Link to="/about">About</Link></li>
-               <li><Link to="/cart">Cart</Link></li>
+               <li><Link to="/cart">Cart</Link> {cartItems.length}</li>
             </ul>
          </nav>
          <div className="profile">

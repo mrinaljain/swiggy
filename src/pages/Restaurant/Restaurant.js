@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Restaurant.css";
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
-import MenuItemCard from "../../components/MenuItemCard/MenuItemCard";
 import RestaurantCategory from "../../components/RestaurantCategory/RestaurantCategory";
 
 function Restaurant() {
