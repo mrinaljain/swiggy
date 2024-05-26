@@ -7,6 +7,7 @@ const useRestaurantMenu = function (resId) {
    const getRestaurentDetails = async () => {
       const data = await fetch(`${GetRestaurantsMenu}${resId}`);
       const json = await data.json();
+      console.log(json.data);
       setResInfo(json.data);
    }
    useEffect(() => { getRestaurentDetails(); }, []);
