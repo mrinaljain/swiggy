@@ -1,14 +1,14 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Body styling */
 body {
-    font-family: 'Arial, sans-serif';
-    /* background-color: #f5f5f5; */
+  font-family: "Arial, sans-serif";
+  /* background-color: #f5f5f5; */
 }
 
 /* Heading Styles */
@@ -17,4 +17,9 @@ h3 {
   color: #333;
   margin-bottom: 20px;
   /* text-align: center; */
+}
+
+.test {
+  margin-left: calc(10% + 36px);
+  margin-right: calc(10% + 36px);
 }

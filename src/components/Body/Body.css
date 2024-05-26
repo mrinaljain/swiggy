@@ -2,10 +2,9 @@
 .foodContainer {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    gap: 18px;
+    justify-content: start;
     padding: 20px;
-    background-color: #f8f8f8;
 }
 
 
