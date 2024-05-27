@@ -10,7 +10,7 @@ const MenuItemCard = (props) => {
       dispatch(addItem(item));
    }
    return (
-      <div className="menu-item-card">
+      <div className=" flex justify-between p-4 bg-slate-400 my-10">
          <div className="menu-item-content">
             <h3 className="menu-item-title">{name}</h3>
             <p className="menu-item-price">₹{price ? price / 100 : defaultPrice / 100}</p>

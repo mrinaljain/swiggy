@@ -4,7 +4,7 @@ import MenuItemCard from "../MenuItemCard/MenuItemCard";
 function RestaurantCategory(params) {
    const { category, isVisible, cardClick, ind } = params;
    return (<div key={category?.card?.card?.index} className="accordion">
-      <h2 className="accordion-header"
+      <h2 className="font-extrabold"
          onClick={() => cardClick(ind)}>
          {category?.card?.card.title} (
          {category?.card?.card?.itemCards?.length})

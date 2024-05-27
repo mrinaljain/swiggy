@@ -7,6 +7,7 @@ import HomeLayout from "../components/HomeLayout";
 import Restaurant from "../pages/Restaurant/Restaurant";
 import Shimmer from "../components/Shimmer/Shimmer";
 import Cart from "../pages/Cart/Cart";
+import Search from "../pages/Search/Search.jsx";
 
 //! Lazy load one component for example
 
@@ -18,6 +19,7 @@ export let routes = createBrowserRouter([
     errorElement: <Error />,
     children: [
       { path: "/", element: <Home /> },
+      { path: "/search", element: <Search /> },
       {
         path: "/about",
         element: (

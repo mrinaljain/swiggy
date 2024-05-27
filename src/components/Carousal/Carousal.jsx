@@ -5,7 +5,7 @@ const Carousel = (props) => {
 
 
    return (
-      <div className="">
+      <div className="mt-5">
          <h3 className='font-bold'>What's on your mind?</h3>
          <div className="flex overflow-x-auto">
                {props.restaurantList.map((restaurant, index) => (

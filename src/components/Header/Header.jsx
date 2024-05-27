@@ -23,6 +23,7 @@ const Header = function () {
             <ul className="flex p-4 m-2">
                <li className="px-4">{connectionStatus ? "Online" : "Offline"} </li>
                <li className="px-4"><Link to="">Home</Link></li>
+               <li className="px-4"><Link to="/search">Search</Link></li>
                <li className="px-4"><Link to="/contact">Contact</Link></li>
                <li className="px-4"><Link to="/about">About</Link></li>
                <li className="px-4">

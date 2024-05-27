@@ -36,16 +36,16 @@ function Restaurant() {
     );
     // console.log("categories", categories);
     return (
-      <div className="restaurant">
-        <div className="restaurant-card">
-          <h2>{name}</h2>
+      <div className="w-4/6 m-auto">
+        <h2 className="text-[24px] font-bold">{name}</h2>
+        <div className=" w-full border border-solid rounded-lg shadow-xl p-4">
           <div className="details">
             <span className="rating">
               {avgRating}
               <span>({"(1 + ratings)"})</span>
             </span>
             <span className="cost">₹{350} for two</span>
-            <span className="cuisines">{cuisines.join(",")}</span>
+            <p className="cuisines">{cuisines.join(",")}</p>
             <div className="location-time">
               <span className="location">Outlet: {"Kalani Nagar"}</span>
               <span className="delivery-time">{"20 - 25 min"}</span>
@@ -56,7 +56,7 @@ function Restaurant() {
             </div>
           </div>
         </div>
-        <div className="accordion-container">
+        <div className="my-12">
           {categories?.map((cat, index) => (
             <RestaurantCategory
               category={cat}

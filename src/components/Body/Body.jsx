@@ -34,8 +34,10 @@ const Body = function () {
       const UpdatedCard = withPromotedLable(RestaurantCard);
       return (
          <div className="body w-5/6  mx-auto">
+
+            {topRestaurantList.length && <Carousel restaurantList={topRestaurantList} />}
             <div className="flex items-center">
-               <div className="m-4 p-4 ">
+               <div className="my-4 mr-4 py-4 ">
                   <input
                      className="border border-solid border-black w-80 py-2 px-4 rounded-lg"
                      type="search"
@@ -51,9 +53,8 @@ const Body = function () {
                   onClick={clearFilter}
                > CLEAR </button>
             </div>
-            {topRestaurantList.length && <Carousel restaurantList={topRestaurantList} />}
             <h3 className="font-bold">Restaurants with online food delivery in Indore</h3>
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex flex-wrap justify-center gap-3">
                {restaurantCardsList.map((restaurant) => {
                   return restaurant?.info?.veg ?
                      <UpdatedCard key={restaurant.info.id} restaurantData={restaurant} />
