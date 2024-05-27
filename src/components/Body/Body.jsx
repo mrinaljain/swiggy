@@ -6,7 +6,6 @@ import useRestaurantList from "../../utils/useRestaurantList";
 import Shimmer from "../Shimmer/Shimmer";
 
 const Body = function () {
-   console.log("Body Rendered");
    let restaurantData = useRestaurantList();
    const [searchKeyword, setsearchKeyword] = useState("");
    const [filter, setFilter] = useState(false);
@@ -34,21 +33,27 @@ const Body = function () {
          : restaurantList;
       const UpdatedCard = withPromotedLable(RestaurantCard);
       return (
-         <div className="test">
-            <div className="button-container">
-               <div className="search-bar">
-                  <input type="search"
+         <div className="body">
+            <div className="flex items-center">
+               <div className="m-4 p-4 ">
+                  <input
+                     className="border border-solid border-black w-80 py-2 px-4 rounded-lg"
+                     type="search"
                      placeholder="Search for restaurants or dishes"
                      onChange={handleSearch}
                      value={searchKeyword}
                   />
                </div>
-               <button className="filter" onClick={handleFilter}> Top Rated </button>
-               <button className="filter clear" onClick={clearFilter}> CLEAR </button>
+               <button className="py-2 px-4 bg-gray-100 rounded-lg"
+                  onClick={handleFilter}
+               > Top Rated </button>
+               <button className="py-2 px-4 mx-2 bg-red-100 rounded-lg"
+                  onClick={clearFilter}
+               > CLEAR </button>
             </div>
-            {topRestaurantList.length && <Carousel restaurantList={topRestaurantList} />}
+            {/* {topRestaurantList.length && <Carousel restaurantList={topRestaurantList} />} */}
             <h3>Restaurants with online food delivery in Indore</h3>
-            <div className="foodContainer">
+            <div className="flex flex-wrap">
                {restaurantCardsList.map((restaurant) => {
                   return restaurant?.info?.veg ?
                      <UpdatedCard key={restaurant.info.id} restaurantData={restaurant} />

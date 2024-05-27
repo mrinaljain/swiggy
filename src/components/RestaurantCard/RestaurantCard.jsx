@@ -1,25 +1,34 @@
-import React, { useContext } from "react";
+import React from "react";
 // import "./RestaurantCard.css";
 import { Link } from "react-router-dom";
-import UserContext from "../../utils/userContext";
-import { useContext } from "react";
+import { CDN_URL } from "../../utils/constants";
+
 const RestaurantCard = (props) => {
    // ! nested Destructuring
-   const { id, name, areaName, cuisines, cloudinaryImageId, avgRating, sla: { slaString } = {}, aggregatedDiscountInfoV3: { header = '', subHeader = '' } = {} } = props.restaurantData?.info;
-   const userData = useContext(UserContext);
+   const {
+      id,
+      name,
+      areaName,
+      cuisines,
+      cloudinaryImageId,
+      avgRating,
+      sla: { slaString } = {},
+      aggregatedDiscountInfoV3: { header = '', subHeader = '' } = {}
+   } = props.restaurantData?.info;
    return (
-      <Link className="card-link" to={`/restaurant/${id}`}>
-         <div className="card">
-            <div className="card-image">
-               <img src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`} alt={name} />
-               <div className="card-discount">{`${header} ${subHeader}`}</div>
+      <Link className="card-link " to={`/restaurant/${id}`}>
+         <div className="card m-2 p-3 w-[230px] bg-orange-50 rounded-md transform ease-in duration-200 hover:scale-95 cursor-pointer">
+            <div className="relative drop-shadow-md">
+               <img className="rounded-md" src={CDN_URL + cloudinaryImageId} alt={name} />
+               <div className="absolute bottom-0 bg-black-900 text-white px-2 py-1"
+               >{`${header} ${subHeader}`}
+               </div>
             </div>
             <div className="card-details">
-               <h3>{name}</h3>
+               <h3 className="font-bold py-4 text text-lg">{name}</h3>
                <p>⭐ {avgRating} • {slaString}</p>
                <p className="cusine">{cuisines.join(",")}</p>
                <p>{areaName}</p>
-               <p>{userData.userName}</p>
             </div>
          </div>
       </Link>

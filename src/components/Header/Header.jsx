@@ -15,27 +15,36 @@ const Header = function () {
    }
    let connectionStatus = useConnectivity();
    return (
-      <header className="header">
+      <header className="flex justify-between items-center shadow-lg px-10">
          <div className="logo">
-            <img src={AppLogo} alt="Swiggy Logo" />
+            <img className="w-16" src={AppLogo} alt="Swiggy Logo" />
          </div>
-         <nav className="nav">
-            <ul>
-               <li>{connectionStatus ? "Connected" : "Not Connected"} </li>
-               <li><Link to="">Home</Link></li>
-               <li><Link to="/contact">Contact</Link></li>
-               <li><Link to="/about">About</Link></li>
-               <li><Link to="/cart">Cart</Link> {cartItems.length}</li>
+         <nav className="flex items-center">
+            <ul className="flex p-4 m-2">
+               <li className="px-4">{connectionStatus ? "Online" : "Offline"} </li>
+               <li className="px-4"><Link to="">Home</Link></li>
+               <li className="px-4"><Link to="/contact">Contact</Link></li>
+               <li className="px-4"><Link to="/about">About</Link></li>
+               <li className="px-4">
+                  <Link to="/cart">Cart</Link> {cartItems.length}
+               </li>
+               <li className="px-4">
+                  <button
+                     onClick={handleAuth}>
+                     {authStatus ? "Sign Out" : "Sign In"}
+                  </button>
+               </li>
+               <li>
+                  <div className="flex items-center">
+                     <span>{userData.userName}</span>
+                     <img className="rounded-full w-6 ml-2" src={userData.userImage} />
+
+                  </div>
+
+               </li>
             </ul>
          </nav>
-         <div className="profile">
-            <img src={userData.userImage} />
-            {userData.userName}
-            <button
-               onClick={handleAuth}>
-               {authStatus ? "Sign Out" : "Sign In"}
-            </button>
-         </div>
+
       </header>
    )
 }
