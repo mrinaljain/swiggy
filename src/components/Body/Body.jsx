@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Body.css"
+// import "./Body.css"
 import RestaurantCard, { withPromotedLable } from "../RestaurantCard/RestaurantCard";
 import Carousel from "../Carousal/Carousal";
 import useRestaurantList from "../../utils/useRestaurantList";

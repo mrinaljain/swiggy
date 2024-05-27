@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import './Carousel.css';
+// import './Carousel.css';
 
 const Carousel = (props) => {
 

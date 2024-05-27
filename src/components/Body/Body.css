@@ -1,4 +1,4 @@
-/* FoodOrdering.css */
+FoodOrdering.css
 .foodContainer {
     display: flex;
     flex-wrap: wrap;
@@ -60,5 +60,5 @@ button.clear:active {
   padding: 10px 20px;
   border: 1px solid #ddd;
   border-radius: 20px;
-  /* width: 350px; */
+  
 }

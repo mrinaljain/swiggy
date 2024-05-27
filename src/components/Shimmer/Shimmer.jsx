@@ -1,5 +1,5 @@
 import React from 'react';
-import './Shimmer.css';
+// import './Shimmer.css';
 
 const ShimmerCard = () => {
    return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import './MenuItemCard.css';
+// import './MenuItemCard.css';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../utils/cartSlice';
 const MenuItemCard = (props) => {

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./RestaurantCard.css";
+// import "./RestaurantCard.css";
 import { Link } from "react-router-dom";
 import UserContext from "../../utils/userContext";
 import { useContext } from "react";

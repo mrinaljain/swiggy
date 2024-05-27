@@ -1,5 +1,5 @@
 import React from 'react';
-import './NoInternet.css';
+// import './NoInternet.css';
 
 const NoInternet = () => {
    return (

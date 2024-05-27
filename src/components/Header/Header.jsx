@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import "./Header.css"
+// import "./Header.css"
 import { AppLogo } from "../../utils/constants";
 import { Link } from "react-router-dom";
 import useConnectivity from "../../utils/useConnectivity";
