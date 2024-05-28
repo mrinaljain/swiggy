@@ -16,12 +16,20 @@ const RestaurantCard = (props) => {
       aggregatedDiscountInfoV3: { header = '', subHeader = '' } = {}
    } = props.restaurantData?.info;
    return (
-      <Link className="card-link " to={`/restaurant/${id}`}>
-         <div className="card p-3 w-56 bg-orange-50 rounded-md transform ease-in duration-200 hover:scale-95 cursor-pointer">
+      <Link to={`/restaurant/${id}`}>
+         <div
+            data-testid="rescard"
+            className={`p-3 w-56 bg-orange-50 rounded-md transform ease-in duration-200 hover:scale-95 cursor-pointer  ${name}`}
+         >
             <div className="relative drop-shadow-md">
-               <img className="rounded-md max-h-32 w-full object-cover" src={CDN_URL + cloudinaryImageId} alt={name} />
-               <div className="absolute bottom-0 bg-black-900 text-white px-2 py-1"
-               >{`${header} ${subHeader}`}
+               <img
+                  className="rounded-md max-h-32 w-full object-cover"
+                  src={CDN_URL + cloudinaryImageId}
+                  alt={name} />
+               <div
+                  className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white px-2 py-1 "
+               >
+                  <span>{header + subHeader}</span>
                </div>
             </div>
             <div className="card-details">

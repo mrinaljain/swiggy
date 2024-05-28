@@ -28,16 +28,16 @@ function Restaurant() {
     <h1>Loading ......</h1>;
   } else {
     const { name, avgRating, cuisines } =
-      restaurentInfo?.cards[2]?.card?.card?.info;
+      restaurentInfo?.data?.cards[2]?.card?.card?.info;
     let categories =
-      restaurentInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+      restaurentInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
     categories = categories.filter((category) =>
       category.card.card["@type"].includes("ItemCategory")
     );
     // console.log("categories", categories);
     return (
-      <div className="w-4/6 m-auto">
-        <h2 className="text-[24px] font-bold">{name}</h2>
+      <div className="w-4/6 m-auto" data-testid="respage">
+        <h2 className="text-[24px] font-bold">{"Name"}</h2>
         <div className=" w-full border border-solid rounded-lg shadow-xl p-4">
           <div className="details">
             <span className="rating">
@@ -59,6 +59,7 @@ function Restaurant() {
         <div className="my-12">
           {categories?.map((cat, index) => (
             <RestaurantCategory
+              key={index}
               category={cat}
               isVisible={activeIndex === index ? true : false}
               cardClick={handleAccordion}
