@@ -7,6 +7,7 @@ import Shimmer from "../Shimmer/Shimmer";
 
 const Body = function () {
    let restaurantData = useRestaurantList();
+
    const [searchKeyword, setsearchKeyword] = useState("");
    const [filter, setFilter] = useState(false);
    function handleFilter() {
@@ -19,11 +20,12 @@ const Body = function () {
       let searchText = e.target.value;
       setsearchKeyword(searchText);
    }
-   if (restaurantData.length === 0) {
+   if (restaurantData === null) {
       return <Shimmer />
    } else {
-      let restaurantList = restaurantData[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-      let topRestaurantList = restaurantData[0].card.card.imageGridCards.info;
+      const { cards } = restaurantData.data;
+      let restaurantList = cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+      let topRestaurantList = cards[0].card.card.imageGridCards.info;
 
       let restaurantCardsList = filter ? restaurantList.filter((oldRestaurent) => oldRestaurent.info.avgRating >= 4.5) : searchKeyword.length > 0
          ? restaurantList
@@ -40,17 +42,22 @@ const Body = function () {
                <div className="my-4 mr-4 py-4 ">
                   <input
                      className="border border-solid border-black w-80 py-2 px-4 rounded-lg"
-                     type="search"
+                     type="text"
                      placeholder="Search for restaurants or dishes"
                      onChange={handleSearch}
                      value={searchKeyword}
+                     name="searchInput"
                   />
                </div>
-               <button className="py-2 px-4 bg-gray-100 rounded-lg"
+               <button
+                  className="py-2 px-4 bg-gray-100 rounded-lg"
                   onClick={handleFilter}
-               > Top Rated </button>
-               <button className="py-2 px-4 mx-2 bg-red-100 rounded-lg"
+                  name="filter"
+               >Top Rated</button>
+               <button
+                  className="py-2 px-4 mx-2 bg-red-100 rounded-lg"
                   onClick={clearFilter}
+                  name="clear"
                > CLEAR </button>
             </div>
             <h3 className="font-bold">Restaurants with online food delivery in Indore</h3>

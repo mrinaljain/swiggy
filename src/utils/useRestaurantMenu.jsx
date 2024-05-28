@@ -5,10 +5,9 @@ import { GetRestaurantsMenu } from "./constants";
 const useRestaurantMenu = function (resId) {
    const [resInfo, setResInfo] = useState(null);
    const getRestaurentDetails = async () => {
-      const data = await fetch(`${GetRestaurantsMenu}${resId}`);
-      const json = await data.json();
-      console.log(json.data);
-      setResInfo(json.data);
+      const res = await fetch(`${GetRestaurantsMenu}${resId}`);
+      const data = await res.json();
+      setResInfo(data);
    }
    useEffect(() => { getRestaurentDetails(); }, []);
    return resInfo;

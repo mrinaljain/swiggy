@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes, RouterProvider } from "react-router-dom";
 import { routes } from "./src/utils/routes";
@@ -11,6 +11,7 @@ const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
 const App = () => {
+  const [userName, setUserName] = useState("Mrinal Jain");
   return (
     //! Using BrowserRouter
     // <BrowserRouter>
@@ -24,8 +25,9 @@ const App = () => {
     <Provider store={appStore}>
       <UserContext.Provider
         value={{
-          userName: "Mrinal ",
+          userFullName: userName,
           userImage: "https://avatars.githubusercontent.com/mrinaljain",
+          changeName: setUserName,
         }}
       >
         <RouterProvider router={routes}></RouterProvider>

@@ -26,23 +26,25 @@ const Header = function () {
                <li className="px-4"><Link to="/search">Search</Link></li>
                <li className="px-4"><Link to="/contact">Contact</Link></li>
                <li className="px-4"><Link to="/about">About</Link></li>
-               <li className="px-4">
-                  <Link to="/cart">Cart</Link> {cartItems.length}
-               </li>
+               {authStatus && <li className="px-4">
+                  <Link to="/cart">Cart {cartItems.length} Items</Link> 
+               </li>}
                <li className="px-4">
                   <button
-                     onClick={handleAuth}>
+                     onClick={handleAuth}
+                     aria-label="login"
+                  >
                      {authStatus ? "Sign Out" : "Sign In"}
                   </button>
                </li>
-               <li>
+               {<li>
+                  <Link to={"/profile/" + userData.userFullName}>
                   <div className="flex items-center">
-                     <span>{userData.userName}</span>
-                     <img className="rounded-full w-6 ml-2" src={userData.userImage} />
-
-                  </div>
-
-               </li>
+                        <span>{userData.userFullName}</span>
+                        <img className="rounded-full w-6 ml-2" src={userData.userImage} />
+                     </div> 
+                  </Link>
+               </li>}
             </ul>
          </nav>
 
