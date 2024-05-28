@@ -8,6 +8,7 @@ import Restaurant from "../pages/Restaurant/Restaurant";
 import Shimmer from "../components/Shimmer/Shimmer";
 import Cart from "../pages/Cart/Cart";
 import Search from "../pages/Search/Search.jsx";
+import Profile from "../pages/Profile/Profile.jsx";
 
 //! Lazy load one component for example
 
@@ -31,6 +32,7 @@ export let routes = createBrowserRouter([
       { path: "/contact", element: <Contact /> },
       { path: "/restaurant/:id", element: <Restaurant /> },
       { path: "/cart", element: <Cart /> },
+      { path: "/profile/:name", element: <Profile /> },
     ],
   },
 ]);
