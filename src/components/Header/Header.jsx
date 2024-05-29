@@ -3,7 +3,7 @@ import React, { useState, useContext } from "react";
 import { AppLogo } from "../../utils/constants";
 import { Link } from "react-router-dom";
 import useConnectivity from "../../utils/useConnectivity";
-import UserContext from "../../utils/userContext";
+import UserContext from "../../utils/UserContext";
 import { useSelector } from "react-redux";
 
 const Header = function () {

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes, RouterProvider } from "react-router-dom";
-import { routes } from "./utils/routes";
-import UserContext from "./utils/userContext";
+import { routes } from "./src/utils/routes";
+import UserContext from "./src/utils/UserContext";
 import { Provider } from "react-redux";
-import appStore from "./utils/appStore";
+import appStore from "./src/utils/appStore";
 
 const rootElement = document.getElementById("root");
 
