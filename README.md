@@ -1,4 +1,8 @@
-# Food App for Jain Eateries
+# Swiggy App clone with React & Redux Tolkit
+[VISIT NOW](https://mrinal-swiggy.netlify.app)
+
+
+## Features
 
 Header
    logo
