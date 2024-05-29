@@ -12,5 +12,11 @@ export const GetCollections =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.71700&lng=75.83370&collection=83667&tags=layout_CCS_Sandwiches&sortBy=&filters=&type=rcv2&offset=0&page_type=null";
 
 export const CDN_URL =
-  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/";
+
+export const SEARCH =
+  "https://www.swiggy.com/dapi/restaurants/search/suggest?lat=22.71700&lng=75.83370&str=";
+
+export const PRE_SEARCH =
+  "https://www.swiggy.com/dapi/landing/PRE_SEARCH?lat=22.71700&lng=75.83370";
 

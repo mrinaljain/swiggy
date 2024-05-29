@@ -7,7 +7,7 @@ import HomeLayout from "../components/HomeLayout";
 import Restaurant from "../pages/Restaurant/Restaurant";
 import Shimmer from "../components/Shimmer/Shimmer";
 import Cart from "../pages/Cart/Cart";
-import Search from "../pages/Search/Search.jsx";
+import Search from "../pages/Search/Search";
 import Profile from "../pages/Profile/Profile.jsx";
 
 //! Lazy load one component for example
