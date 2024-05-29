@@ -4,8 +4,9 @@ import { CDN_URL } from "../utils/constants";
 const SuggestionCard = (props) => {
    const { text, type, cloudinaryId } = props.item
    return (
-      <Link to="">
-         <div className="flex hover:bg-slate-200 rounded-md px-2 py-1 items-center my-5">
+
+      <div onClick={props.enter}
+         className="flex hover:bg-slate-200 rounded-md px-2 py-1 items-center my-5">
             <img
                src={CDN_URL + cloudinaryId}
                className="rounded-md max-w-14 bg-cover object-cover"
@@ -15,7 +16,7 @@ const SuggestionCard = (props) => {
                <h5>{type}</h5>
             </div>
          </div>
-      </Link>
+
    )
 }
 
