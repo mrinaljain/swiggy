@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 // import "./Body.css"
-import RestaurantCard, { withPromotedLable } from "../RestaurantCard/RestaurantCard";
-import Carousel from "../Carousal/Carousal";
-import useRestaurantList from "../../utils/useRestaurantList";
-import Shimmer from "../Shimmer/Shimmer";
+import RestaurantCard, { withPromotedLable } from "./RestaurantCard/RestaurantCard";
+import Carousel from "./Carousal/Carousal";
+import useRestaurantList from "../utils/useRestaurantList";
+import Shimmer from "./Shimmer/Shimmer";
 
 const Body = function () {
    let restaurantData = useRestaurantList();

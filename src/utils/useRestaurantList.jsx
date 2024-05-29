@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { GetRestaurants } from "./constants";
 
-export default useRestaurantList = () => {
+const useRestaurantList = () => {
    const [restaurantList, setRestaurentList] = useState(null);
 
    useEffect(getdata, []);
@@ -15,3 +15,4 @@ export default useRestaurantList = () => {
    }
    return restaurantList;
 }
+export default useRestaurantList;
