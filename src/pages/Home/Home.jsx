@@ -1,5 +1,5 @@
 import React from "react";
-import Body from "../../components/Body/Body";
+import Body from "../../components/Body";
 import useConnectivity from "../../utils/useConnectivity";
 import NoInternet from "../../components/NoInternet/NoInternet";
 
