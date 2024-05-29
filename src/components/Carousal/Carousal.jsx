@@ -39,7 +39,7 @@ const Carousel = (props) => {
             className="flex overflow-x-auto scroll-smooth no-scrollbar"
             ref={scrollContainer}>
             {props.restaurantList.map((restaurant, index) => (
-               <div key={index} className="min-w-32 mx-4">
+               <div key={index} className="min-w-24 mx-4">
                   <img src={CDN_URL + restaurant.imageId} alt={restaurant.imageId} />
                </div>
             ))}
