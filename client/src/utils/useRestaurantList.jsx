@@ -9,7 +9,6 @@ const useRestaurantList = () => {
       (async () => {
          let response = await fetch(GetRestaurants);
          let data = await response.json();
-         // setRestaurentList(data?.data?.cards);
          setRestaurentList(data);
       })();
    }

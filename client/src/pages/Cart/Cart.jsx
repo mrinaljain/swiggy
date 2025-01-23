@@ -5,6 +5,7 @@ import { clearCart } from "../../utils/cartSlice";
 
 const Cart = () => {
 
+   // accessing the specific slice of the state.slicename.itemname
    const cardItems = useSelector((state) => state.cart.items);
    console.log("cardItems", cardItems);
    const dispatch = useDispatch();

@@ -1,5 +1,7 @@
-/node_modules
+/client/node_modules
 /dist
 /.parcel-cache
 /coverage
 **/.DS_Store
+
+/server/node_modules
