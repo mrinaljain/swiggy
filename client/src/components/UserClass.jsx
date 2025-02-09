@@ -1,17 +1,21 @@
 import react, { Component } from "react"
 
 class UserClass extends Component {
-   constructor(props) {
-      super(props);
-      // console.log(props);
-      this.state = {
-         userName: "Mrinal",
-         otherUser: "User 2"
-      }
-      console.log(this.props.name + "Child constructor");
+   // Old way of using class component
+   // constructor(props) {
+   //    super(props);
+   //    this.state = {
+   //       userName: "Mrinal",
+   //       otherUser: "User 2"
+   //    }
+   //    console.log(this.props.info.name + "Child constructor");
+   // }
+   // NEW way of using class component
+   state = {
+      userName: "Mrinal",
+      otherUser: "User 2"
    }
-
-   componentDidMount() {
+   componentDidMount() { 
       console.log("Child Did Mount");
    }
    componentDidUpdate() {
@@ -24,13 +28,14 @@ class UserClass extends Component {
    render() {
       console.log("Child Render");
       const { userName, otherUser } = this.state;
+      const { name, surname } = this.props.info;
       return (
          <div className="w-38 bg-red-300">
             <h1>Class Component</h1>
-            <h2>{this.props.info.name + " " + this.props.info.surname}</h2>
+            <h2>{name + " " + surname}</h2>
             <h2>{otherUser}</h2>
             <h2>{userName}</h2>
-            <button onClick={() => {
+            <button className="border-t-cyan-300 lowercase border-spacing-6 border-dashed " onClick={() => {
                this.setState({
                   userName: "Introvert Influencer"
                })

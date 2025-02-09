@@ -11,7 +11,7 @@ const Header = function () {
    const userData = useContext(UserContext);
    const cartItems = useSelector((store) => store.cart.items);
    function handleAuth() {
-      setAuthStatus((oldStatus) => !oldStatus);
+      setAuthStatus((oldStatus) => { return !oldStatus });
    }
    let connectionStatus = useConnectivity();
    return (
@@ -21,15 +21,28 @@ const Header = function () {
          </div>
          <nav className="flex items-center">
             <ul className="flex p-4 m-2">
-               <li className="px-4">{connectionStatus ? "Online" : "Offline"} </li>
-               <li className="px-4"><Link to="">Home</Link></li>
-               <li className="px-4"><Link to="/search">Search</Link></li>
-               <li className="px-4"><Link to="/contact">Contact</Link></li>
-               <li className="px-4"><Link to="/about">About</Link></li>
-               {authStatus && <li className="px-4">
-                  <Link to="/cart">Cart {cartItems.length} Items</Link> 
-               </li>}
-               <li className="px-4">
+               <li key="as7" className="px-4">{connectionStatus ? "Online" : "Offline"} </li>
+               <li key="as6" className="px-4"><Link to="">Home</Link></li>
+               <li key="as5" className="px-4"><Link to="/search">Search</Link></li>
+               <li key="as4" className="px-4"><Link to="/contact">Contact</Link></li>
+               <li key="as3" className="px-4"><Link to="/about">About</Link></li>
+               {authStatus &&
+                  <>
+                     <li className="px-4">
+                        <Link to="/cart">Cart {cartItems.length} Items
+                        </Link>
+                     </li>
+                     <li key="as1">
+                        <Link to={"/profile/" + userData.userFullName}>
+                           <div className="flex items-center">
+                              <span>{userData.userFullName}</span>
+                              <img className="rounded-full w-6 ml-2" src={userData.userImage} />
+                           </div>
+                        </Link>
+                     </li>
+                  </>
+               }
+               <li key="as2" className="px-4">
                   <button
                      onClick={handleAuth}
                      aria-label="login"
@@ -37,14 +50,6 @@ const Header = function () {
                      {authStatus ? "Sign Out" : "Sign In"}
                   </button>
                </li>
-               {<li>
-                  <Link to={"/profile/" + userData.userFullName}>
-                  <div className="flex items-center">
-                        <span>{userData.userFullName}</span>
-                        <img className="rounded-full w-6 ml-2" src={userData.userImage} />
-                     </div> 
-                  </Link>
-               </li>}
             </ul>
          </nav>
 
